@@ -1,0 +1,29 @@
+class Solution {
+public:
+    int reverse(int x) {
+        bool flag=0;
+        long ans=0;
+        long y=x;
+        if(y<0){
+            flag=1;
+            y=y*-1;
+        }
+        int rem=0;
+        while(y>0){
+            rem=y%10;
+            ans=ans*10+rem;
+            y/=10;
+        }
+        if(flag){
+            ans=ans*-1;
+            if(ans<INT_MIN)
+                return 0;
+            return ans;
+        }
+        else{
+            if(ans>INT_MAX)
+                return 0;
+            return ans;
+        }
+    }
+};
