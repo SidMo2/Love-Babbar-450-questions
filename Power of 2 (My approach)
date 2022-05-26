@@ -1,0 +1,17 @@
+class Solution {
+public:
+    bool isPowerOfTwo(int n) {
+        bool ans;
+        int rem;
+        if(n==1)
+            return true;
+        else{
+            rem=n%2;
+            if(rem==0)
+                ans=isPowerOfTwo(n/2);
+            else
+                return false;
+        }
+        return ans;
+    }
+};
